@@ -1,0 +1,376 @@
+/* === ESTILOS GENERALES === */
+:root {
+  --primary-color: #3b82f6;
+  --primary-color-hover: #2563eb;
+  --vacaciones-color: #22c55e;
+  --bajamedica-color: #06b6d4;
+  --text-light: #ffffff;
+  --text-dark: #1e293b;
+  --border-color: #e2e8f0;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: var(--text-dark);
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+/* === HEADER === */
+.header-bar {
+  background: linear-gradient(90deg, var(--bajamedica-color), var(--primary-color));
+  color: var(--text-light);
+  padding: 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+}
+
+/* === TITULOS === */
+.title {
+  font-size: 2.2rem;
+  margin: 0 0 30px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* === TARJETA PRINCIPAL === */
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* === CALENDARIO === */
+.react-calendar {
+  width: 100% !important;
+  max-width: 850px;
+  margin: 0 auto 25px;
+  font-size: 1rem;
+  border-radius: 18px;
+  background: transparent;
+  padding: 20px;
+  border: none;
+}
+
+/* Navegación del calendario (botones y título) */
+.react-calendar__navigation {
+  display: flex;
+  margin-bottom: 1em;
+  height: 44px;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f1f5f9;
+}
+
+.react-calendar__navigation__label {
+  font-weight: bold;
+  font-size: 1.2em !important;
+}
+
+.react-calendar__month-view__weekdays {
+  background: #f8fafc;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 12px;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+
+.react-calendar__tile {
+  padding: 15px 0;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Día de hoy */
+.react-calendar__tile--now {
+  background: #e0f2fe;
+  font-weight: bold;
+}
+
+.react-calendar__tile--active {
+  background: var(--primary-color);
+  color: var(--text-light);
+  font-weight: bold;
+  transform: scale(1.06);
+}
+
+.react-calendar__tile:enabled:hover {
+  background: var(--primary-color-hover);
+  color: var(--text-light);
+  transform: scale(1.06);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #94a3b8;
+}
+
+/* DÍAS PERSONALIZADOS */
+.vacaciones-day {
+  background: var(--vacaciones-color);
+  color: var(--text-light);
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(34, 197, 94, 0.6);
+}
+
+.bajamedica-day {
+  background: var(--bajamedica-color);
+  color: var(--text-light);
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(6, 182, 212, 0.6);
+}
+
+/* === FORMULARIO === */
+.form-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.input,
+.select {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  min-width: 220px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+}
+
+.input:focus,
+.select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+.btn-guardar {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background: linear-gradient(135deg, var(--primary-color-hover), #1d4ed8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* === SOLICITUDES === */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  text-align: left;
+  margin: 40px 0 20px;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.request-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: all 0.25s ease;
+  border-left: 6px solid transparent;
+}
+
+.request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.vacaciones-card {
+  border-left-color: var(--vacaciones-color);
+}
+
+.bajamedica-card {
+  border-left-color: var(--bajamedica-color);
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.request-type {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.request-dates {
+  margin-top: 4px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+.btn-cancelar {
+  background: #f1f5f9;
+  color: #475569;
+  font-weight: bold;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background: #e2e8f0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* === MODAL === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  animation: slideIn 0.4s ease-out;
+}
+
+.btn-add {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
